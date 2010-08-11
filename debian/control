@@ -1,0 +1,26 @@
+Source: ibus-xkbc
+Section: utils
+Priority: optional
+Maintainer: IME Packaging Team <pkg-ime-devel@lists.alioth.debian.org>
+Uploaders: Asias He <asias.hejun@gmail.com>, LI Daobing <lidaobing@debian.org>
+Build-Depends:
+ debhelper (>= 7.0.50~), 
+ autotools-dev,
+ python-support,
+ pkg-config,
+ libibus-dev (>= 1.3),
+ autopoint | gettext (<< 0.17-10~),
+ autoconf,
+ automake,
+ libtool,
+ rarian-compat
+Standards-Version: 3.9.1
+Homepage: http://github.com/sun-im/ibus-xkbc
+Vcs-Bzr: lp:~pkg-ime/ibus/debian-ibus-xkbc
+Vcs-browser: https://code.launchpad.net/~pkg-ime/ibus/debian-ibus-xkbc
+
+Package: ibus-xkbc
+Architecture: all
+Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, ibus (>= 1.3)
+Description: keyboard layout emulation engine for IBus
+ ibus-xkbc is a keyboard layout emulation engine based on XKeyboard Config data
