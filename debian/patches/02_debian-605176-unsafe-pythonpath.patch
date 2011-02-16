@@ -1,0 +1,20 @@
+Description: Fix unsafe PYTHONPATH setting
+ When setting PYTHONPATH=/spam/eggs:$PYTHONPATH, if PYTHONPATH were
+ originally unset or empty,current working directory would be added to
+ sys.path.
+ Since ${exec_prefix}/lib/python2.6/site-packages is a sane default setting
+ in the Python world, adding such an "export" command is somehow odd and
+ causes security issue, so this patch removes the line.
+Author: Aron Xu <happyaron.xu@gmail.com>
+Bug-Debian: 605176
+Last-Update: 2011-02-16
+--- a/engine/ibus-engine-xkbc.in
++++ b/engine/ibus-engine-xkbc.in
+@@ -19,7 +19,6 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ #
+-export PYTHONPATH=@prefix@/lib/python2.6/site-packages:$PYTHONPATH
+ export LIBEXECDIR=@libexecdir@
+ export XKBC_SETUPDIR=@prefix@/share/ibus-xkbc/setup
+ export XKBC_DATAFILE=@prefix@/share/ibus-xkbc/data/xkbc.dat
