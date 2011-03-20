@@ -19,6 +19,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
+import gettext
 import os
 import sys
 import getopt
@@ -32,6 +33,8 @@ from vkb_canvas import *
 from vkb_window import *
 from vkb_config import *
 
+_ = lambda a : gettext.dgettext("ibus-xkbc", a)
+
 #----------------------------------------------------------
 def print_help(out, v=0):
     print >> out, "-i", "# for reset option (x, y, scale, transparency etc...)"
@@ -39,6 +42,9 @@ def print_help(out, v=0):
     sys.exit(v)
 
 def main():
+
+    gettext.bindtextdomain("ibus-xkbc", os.getenv('XKBC_LOCALE_DIR'))
+    gettext.bind_textdomain_codeset("ibus-xkbc", "UTF-8")
 
     shortopt = "ih"
     try:
@@ -58,7 +64,7 @@ def main():
     xkbcdb = prefs_get_xkbc_db()
 
     window = VKBWindow()
-    window.set_title("Virtual Keyboard")
+    window.set_title(_("Virtual Keyboard"))
     vkb = VKBCanvas(window, xkbcdb)
     window.set_canvas(vkb)
     window.set_default_size(int(vkb.get_width()), int(vkb.get_height()))
