@@ -13,13 +13,7 @@
 	dh  $@
 
 override_dh_auto_configure:
-	autopoint --force
-	libtoolize --automake --copy --force
-	aclocal -I m4 --force
-	autoheader --force
-	automake --add-missing --copy --force
-	autoconf --force
+	./autogen.sh --prefix=/usr --libexecdir=/usr/libexec
 	dh_auto_configure
 
 override_dh_auto_clean:
-
