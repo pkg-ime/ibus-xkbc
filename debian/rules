@@ -14,6 +14,6 @@
 
 override_dh_auto_configure:
 	./autogen.sh
-	dh_auto_configure
+	dh_auto_configure --  --libexecdir=/usr/lib/ibus-xkbc
 
 override_dh_auto_clean:
