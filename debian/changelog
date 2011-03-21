@@ -4,11 +4,12 @@ ibus-xkbc (1.3.3.20100922-1) unstable; urgency=low
   * Set Vcs to git.debian.org
   * Add patch for autogen.sh
   * Set DM-Upload-Allowed to yes
+  * Fix "Use of PYTHONPATH env var in an insecure way" (Closes: #605176)
 
   [ LI Daobing ]
-  * debian/watch: updated. 
+  * debian/watch: updated.
 
- -- LI Daobing <lidaobing@debian.org>  Mon, 21 Mar 2011 21:31:34 +0800
+ -- Asias He <asias.hejun@gmail.com>  Mon, 21 Mar 2011 22:12:07 +0800
 
 ibus-xkbc (1.3.3.20100804-2) unstable; urgency=low
 

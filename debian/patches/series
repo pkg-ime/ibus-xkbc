@@ -1,2 +1,3 @@
 02_debian-605176-unsafe-pythonpath.patch
+fix-pythonpath-env.patch
 fix-autogen.patch
