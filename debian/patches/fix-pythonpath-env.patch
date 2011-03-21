@@ -1,0 +1,10 @@
+--- a/engine/ibus-engine-xkbc.in
++++ b/engine/ibus-engine-xkbc.in
+@@ -19,7 +19,6 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ #
+-export PYTHONPATH=@prefix@/lib/python2.6/site-packages:$PYTHONPATH
+ export LIBEXECDIR=@libexecdir@
+ export XKBC_SETUPDIR=@prefix@/share/ibus-xkbc/setup
+ export XKBC_DATAFILE=@prefix@/share/ibus-xkbc/data/xkbc.dat
