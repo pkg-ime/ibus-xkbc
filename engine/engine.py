@@ -18,6 +18,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
+import gettext
 import os
 from os import path
 
@@ -35,6 +36,8 @@ from ibus import modifier
 
 from compose_tbl import *
 
+_ = lambda a : gettext.dgettext("ibus-xkbc", a)
+
 COMPOSE_END = 0
 COMPOSE_START = 1
 COMPOSE_PROCESS = 2
@@ -47,6 +50,9 @@ class Engine(ibus.EngineBase):
 
     def __init__(self, bus, object_path):
         super(Engine, self).__init__(bus, object_path)
+
+        gettext.bindtextdomain("ibus-xkbc", os.getenv('XKBC_LOCALE_DIR'))
+        gettext.bind_textdomain_codeset("ibus-xkbc", "UTF-8")
 
         self.__prop_dict = {}
         self.__config = Config(bus)

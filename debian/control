@@ -3,6 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: IME Packaging Team <pkg-ime-devel@lists.alioth.debian.org>
 Uploaders: Asias He <asias.hejun@gmail.com>, LI Daobing <lidaobing@debian.org>
+DM-Upload-Allowed: yes
 Build-Depends:
  debhelper (>= 7.0.50~), 
  autotools-dev,
@@ -13,11 +14,12 @@ Build-Depends:
  autoconf,
  automake,
  libtool,
- rarian-compat
+ rarian-compat,
+ quilt (>= 0.46-7~)
 Standards-Version: 3.9.1
 Homepage: http://github.com/sun-im/ibus-xkbc
-Vcs-Bzr: lp:~pkg-ime/ibus/debian-ibus-xkbc
-Vcs-browser: https://code.launchpad.net/~pkg-ime/ibus/debian-ibus-xkbc
+Vcs-Git: git://git.debian.org/git/pkg-ime/ibus-xkbc.git
+Vcs-Browser: http://git.debian.org/?p=pkg-ime/ibus-xkbc.git
 
 Package: ibus-xkbc
 Architecture: all

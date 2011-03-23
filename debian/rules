@@ -10,16 +10,10 @@
 #export DH_VERBOSE=1
 
 %:
-	dh  $@
+	dh  --with quilt $@
 
 override_dh_auto_configure:
-	autopoint --force
-	libtoolize --automake --copy --force
-	aclocal -I m4 --force
-	autoheader --force
-	automake --add-missing --copy --force
-	autoconf --force
-	dh_auto_configure
+	./autogen.sh
+	dh_auto_configure --  --libexecdir=/usr/lib/ibus-xkbc
 
 override_dh_auto_clean:
-

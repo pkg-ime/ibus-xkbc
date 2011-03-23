@@ -1,2 +1,2 @@
 version=3
-http://githubredir.debian.net/github/sun-im/ibus-xkbc (.*).tar.gz
+https://github.com/sun-im/ibus-xkbc/archives/master /downloads/sun-im/ibus-xkbc/ibus-xkbc-(.+)\.tar\.gz
